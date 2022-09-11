@@ -7,13 +7,15 @@ fn call_create_arrays() {
              create_arrays::create_array_with_constructor_and_nulls());
     println!("Float64Array::from(vec![1., 1.5, 2.]): {:?}",
              create_arrays::create_float_array());
-    println!("Int32Builder::with_capacity(6) ... .append_value(1) ...: {:?}",
-             create_arrays::create_array_with_builder());
+    println!("Int32Builder::new() ... .append_value(1) ...: {:?}",
+             create_arrays::create_array_with_default_builder());
+    println!("Int32Builder::with_capacity(2) ... .append_value(1) ...: {:?}",
+             create_arrays::create_array_with_builder_and_capacity());
     println!("vec![1, 2, 3].into_iter().collect::<Int32Array>(): {:?}",
              create_arrays::create_array_with_collect());
-    println!("StringBuilder::with_capacity(3, 6) ... .append_value(\"foo\") ...: {:?}",
+    println!("StringBuilder::with_capacity(4, 32) ... .append_value(\"foo\") ...: {:?}",
              create_arrays::create_string_array_with_builder());
-    println!("vec![\"foo\", \"bar\", \"foobar\"].iter().collect::<StringArray>(): {:?}",
+    println!("vec![\"foo\", \"bar\", \"foobar\"].into_iter().map(Some).collect::<StringArray>(): {:?}",
              create_arrays::create_string_array_with_collect());
 }
 
