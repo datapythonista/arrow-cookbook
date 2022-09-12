@@ -1,4 +1,5 @@
 mod create_arrays;
+mod low_level_api;
 
 fn call_create_arrays() {
     println!("Int32Array::from(vec![1, 2, 3]): {:?}",
@@ -19,6 +20,16 @@ fn call_create_arrays() {
              create_arrays::create_string_array_with_collect());
 }
 
+fn call_low_level_api() {
+    low_level_api::introspect_int_array();
+    low_level_api::introspect_int_array_capacity();
+    low_level_api::introspect_int_array_with_nulls();
+    low_level_api::introspect_string_array();
+    println!("ArrayData::try_new(...): {:?}",
+             low_level_api::create_int_array_from_buffer());
+}
+
 fn main() {
     call_create_arrays();
+    call_low_level_api();
 }

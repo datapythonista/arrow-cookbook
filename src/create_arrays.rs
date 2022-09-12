@@ -5,7 +5,6 @@
 //! the data is already in memory in a rust collection, or if it needs
 //! to be iterated, for example because it is read from disk.
 
-use arrow;
 use arrow::array::{Int32Array, Int32Builder,
                    Float64Array,
                    StringArray, StringBuilder};
